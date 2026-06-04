@@ -2094,6 +2094,7 @@ void InnerWidget::mousePressEvent(QMouseEvent *e) {
 
 	const auto alt = (e->modifiers() & Qt::AltModifier);
 	if (alt && showChatPreview()) {
+		_pressButton = Qt::NoButton;
 		return;
 	} else if (!alt && isUserpicPress()) {
 		scheduleChatPreview(e->globalPos());
