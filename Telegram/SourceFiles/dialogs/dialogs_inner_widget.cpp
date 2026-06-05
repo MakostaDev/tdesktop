@@ -3328,6 +3328,9 @@ void InnerWidget::contextMenuEvent(QContextMenuEvent *e) {
 	const auto fromMouse = e->reason() == QContextMenuEvent::Mouse;
 
 	if (fromMouse) {
+		if (QGuiApplication::keyboardModifiers() & Qt::AltModifier) {
+			return;
+		}
 		selectByMouse(e->globalPos());
 	}
 
